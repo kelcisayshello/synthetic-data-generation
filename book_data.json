@@ -1,0 +1,67 @@
+[
+    {
+        "book_id": 1,
+        "title": "Any son compare culture",
+        "author": "Marcia Hinton",
+        "isbn": "978-1-132-51651-5",
+        "publication_year": 2003,
+        "genre": "Crime",
+        "age_classification": "Early Readers",
+        "publisher": "Horton, Johnson and Rangel",
+        "description": "Determine eye through concern. City they TV short.",
+        "average_rating": 0.1,
+        "number_of_ratings": 685199
+    },
+    {
+        "book_id": 2,
+        "title": "Pull however",
+        "author": "Emily Levy",
+        "isbn": "978-1-331-04374-4",
+        "publication_year": 2001,
+        "genre": "Poetry",
+        "age_classification": "Adult",
+        "publisher": "Smith LLC",
+        "description": "Happy vote watch major rather mother truth. Road always already while moment impact simple born. Significant least yet any person.",
+        "average_rating": 1.9,
+        "number_of_ratings": 601808
+    },
+    {
+        "book_id": 3,
+        "title": "Next exactly bill feeling present",
+        "author": "Emily Montgomery",
+        "isbn": "978-1-72132-899-4",
+        "publication_year": 1986,
+        "genre": "Memoir",
+        "age_classification": "Chapter Books",
+        "publisher": "Buckley, Gonzalez and Tran",
+        "description": "Edge service open true few century individual. West success seven know. Language together live public business choose store.",
+        "average_rating": 0.7,
+        "number_of_ratings": 591297
+    },
+    {
+        "book_id": 4,
+        "title": "Moment pick long",
+        "author": "Emily Smith",
+        "isbn": "978-0-234-95706-6",
+        "publication_year": 2021,
+        "genre": "Spirituality",
+        "age_classification": "Teens",
+        "publisher": "Olson LLC",
+        "description": "Give contain music seven point behind key. Hand quality red story send.",
+        "average_rating": 2.8,
+        "number_of_ratings": 826958
+    },
+    {
+        "book_id": 5,
+        "title": "Lose analysis figure Congress",
+        "author": "Ebony Sullivan",
+        "isbn": "978-0-470-16045-9",
+        "publication_year": 1979,
+        "genre": "True Crime",
+        "age_classification": "Picture Books",
+        "publisher": "Wong-Jackson",
+        "description": "Contain catch thus kind food physical. House road serious popular doctor positive.",
+        "average_rating": 2.8,
+        "number_of_ratings": 35894
+    }
+]
