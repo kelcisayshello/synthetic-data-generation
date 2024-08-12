@@ -3,8 +3,6 @@ import random
 
 fake = Faker()
 
-# @TODO implement probability skew for random ratings
-
 BOOK_AGE_CLASSIFICATIONS = [
     'Picture Books', 'Early Readers', 'Chapter Books', 'Teens', 'Young Adult (YA)', 'Adult'
 ]
@@ -18,15 +16,15 @@ BOOK_GENRES = [
     'Suspense and Thriller', 'Travel', 'True Crime', 'Western'
 ]
 
-def generate_random_genres():
+def generate_random_genres(genres: list[str]):
     """Generates a string of random genres, with a maximum of 4 genres per book."""
 
     num_genres = random.randint(1, 4)  # Choose between 1 and 4 genres
-    selected_genres = random.sample(BOOK_GENRES, num_genres)  # Randomly select genres without repetition
+    selected_genres = random.sample(genres, num_genres)  # Randomly select genres without repetition
     # print(selected_genres)
     return ", ".join(selected_genres)  # Join genres into a comma-separated string
 
-def skew_random_reviews():
+def skew_review_count():
     """Generates a random count for reviews, biased towards numbers under 1,000,000."""
     reviews_count = [0, 1] 
     weights = [8, 1]     
@@ -36,7 +34,7 @@ def skew_random_reviews():
         return random.randint(0, 2000000)
     else:
         return random.randint(2000000, 8000000)
-    
+
 def skew_rating():
     """Generates a random decimal rating from 1 to 5, skewed towards 2 to 3.9."""
 
@@ -46,11 +44,10 @@ def skew_rating():
         return round(random.uniform(2, 3.9), 1)
     else:
         return round(random.uniform(1, 5), 1)
-
-
+    
 book_id = 1
 def generate_book_data():
-    """Generates a dictionary of synthetic book information.""" 
+    """Generates a dictionary containing synthetic book information.""" 
     
     global book_id
     
@@ -60,12 +57,12 @@ def generate_book_data():
         'author': fake.name(),
         'isbn': fake.isbn13(),
         'publication_year': random.randint(1970, 2024),
-        'genre': generate_random_genres(),
+        'genre': generate_random_genres(BOOK_GENRES),
         'age_classification': random.choice(BOOK_AGE_CLASSIFICATIONS),
         'publisher': fake.company(),
         'description': fake.paragraph(nb_sentences=3),
-        'average_rating': round(random.uniform(1, 5), 1),
-        'number_of_ratings': skew_random_reviews()
+        'average_rating': skew_rating(),
+        'number_of_ratings': skew_review_count()
     }
     
     book_id += 1
