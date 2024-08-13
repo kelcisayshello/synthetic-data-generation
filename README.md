@@ -31,4 +31,4 @@ python3 main.py
 5. Happy data generation!
 
 ### Sample Data Generation Workflow ✨
-(Preview coming soon . . . !)
+![](preview_dialogue.gif)

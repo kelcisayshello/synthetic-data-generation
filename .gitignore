@@ -1,4 +1,5 @@
 /virtualenv
 __pycache__/
-/sample_outputs/
+/sample_outputs/*.csv
+/sample_outputs/*.json
 .DS_Store
