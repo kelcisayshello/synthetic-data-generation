@@ -1,6 +1,6 @@
 # Synthetic Data Generation 🤖
 
-I understand the importance of having quality synthetic data for testing, development, and machine learning projects. Thus this project was created to be a reusable resource for generating realistic, customizable, but fake media data. 
+This project offers a flexible solution for generating customizable fake data, empowering other developers to enhance web applications, software, and machine learning projects with no-bloat tools for development.
 
 ### File Structure 📑
 
