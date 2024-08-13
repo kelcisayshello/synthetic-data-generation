@@ -16,32 +16,19 @@ I understand the importance of having quality synthetic data for testing, develo
 
 1. Clone the repository
 2. Create and activate a virtual environment
-```
+```zsh
 python3 -m venv virtualenv
 source virtualenv/bin/activate
 ```
 3. Install Python dependencies
-```
+```zsh
 pip install -r requirements.txt
 ```
-4. Run the data generation scripts in the `generators/` folder.
-5. Convert the generated data using the scripts in the `converters/` folder.
-
-### Example Code ✨ to Generate Synthetic Book Data
-
-```python
-from generators import *
-
-# Generate data for a single book
-book_data = generate_book_data(1)
-print(book_data)
-
-# Generate data for multiple books
-num_books = 10
-book_data_list = [generate_book_data(i+1) for i in range(num_books)] 
-
-# Save data to a JSON file
-import json
-with open('sample_book_data.json', 'w') as f:
-    json.dump(book_data_list, f, indent=4)
+4. From the root folder, run the `main.py` file using this command.
+```zsh
+python3 main.py
 ```
+5. Happy data generation!
+
+### Sample Data Generation Workflow ✨
+(Preview coming soon . . . !)

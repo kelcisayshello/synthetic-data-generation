@@ -77,7 +77,7 @@ def main():
         generate_more = int(input("Do you want to generate more data?\n[1] Yes \n[2] No\nEnter your choice: "))
         if generate_more != 1:
             print("Okay, glad I could help ✨! ")
-            break  # Exit the outer loop if the user doesn't want to continue
+            break
 
 if __name__ == "__main__":
     main()
