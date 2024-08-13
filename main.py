@@ -62,7 +62,7 @@ def main():
             except ValueError:
                 print("ValueError: Invalid input. That is not a number. Please try again.\n")
         
-        print("Congrats 🎉! Your database is ready.\n")
+        print("Congrats 🎉! Your database is ready.", end=' ')
 
         if str_content_type == "TV shows":
             str_content_type = "tv_shows"
@@ -76,8 +76,8 @@ def main():
 
         generate_more = int(input("Do you want to generate more data?\n[1] Yes \n[2] No\nEnter your choice: "))
         if generate_more != 1:
+            print("Okay, glad I could help ✨! ")
             break  # Exit the outer loop if the user doesn't want to continue
-        print("Okay, glad I could help ✨! ")
 
 if __name__ == "__main__":
     main()

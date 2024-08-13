@@ -16,16 +16,25 @@ BOOK_GENRES = [
     'Suspense and Thriller', 'Travel', 'True Crime', 'Western'
 ]
 
-def generate_random_genres(genres: list[str]):
-    """Generates a string of random genres, with a maximum of 4 genres per book."""
+def generate_random_genres(genres: list[str]) -> str:
+    """
+    Randomly generates a comma-separated string of genres.
 
-    num_genres = random.randint(1, 4)  # Choose between 1 and 4 genres
-    selected_genres = random.sample(genres, num_genres)  # Randomly select genres without repetition
-    # print(selected_genres)
-    return ", ".join(selected_genres)  # Join genres into a comma-separated string
+    Args:
+        genres (list[str]): A list of available genres to choose from.
 
-def skew_review_count():
+    Returns:
+        (str): A comma-separated string containing a random selection of genres,
+        with a maximum of 4 genres included.
+    """
+
+    num_genres = random.randint(1, 4) 
+    selected_genres = random.sample(genres, num_genres)
+    return ", ".join(selected_genres)
+
+def skew_rating_count():
     """Generates a random count for reviews, biased towards numbers under 1,000,000."""
+    
     reviews_count = [0, 1] 
     weights = [8, 1]     
     choice = random.choices(reviews_count, weights=weights)[0]
@@ -46,24 +55,45 @@ def skew_rating():
         return round(random.uniform(1, 5), 1)
     
 book_id = 1
-def generate_book_data():
-    """Generates a dictionary containing synthetic book information.""" 
-    
+def generate_book_data() -> dict:
+    """
+    Generates a dictionary containing synthetic book information. This function relies on a global `book_id` variable to maintain unique book IDs.
+
+    Returns:
+        (dict): A dictionary representing a book with the following keys:
+            - book_id (int): A unique identifier for each book record.
+            - title (str): Title of the book.
+            - author (str): A randomly generated author name.
+            - isbn13 (str): A randomly generated 13-digit ISBN number.
+            - publication_year (int): A random year between 1970 and 2024, with skewed distribution towards years after 1988.
+            - genre (str): A comma-separated string of randomly selected genres.
+            - age_classification (str): A randomly chosen age classification.
+            - publisher (str): A randomly generated publisher name.
+            - synopsis (str): A randomly generated book synopsis.
+            - average_rating (float): Average rating with skewed distribution (float).
+            - rating_count (int): Number of ratings given (integer).
+            
+        Keys coming soon include:
+            - series (str): A randomly generated series title.
+            - volume_number (int): Denoted volume, if exists.
+            - edition (int): Denoted book edition, if exists.
+    """
+
     global book_id
-    
-    book_dictionary =  {
+
+    book_dictionary = {
         'book_id': book_id,
         'title': fake.sentence(nb_words=4)[:-1], 
         'author': fake.name(),
-        'isbn': fake.isbn13(),
+        'isbn13': fake.isbn13(),
         'publication_year': random.randint(1970, 2024),
         'genre': generate_random_genres(BOOK_GENRES),
         'age_classification': random.choice(BOOK_AGE_CLASSIFICATIONS),
         'publisher': fake.company(),
-        'description': fake.paragraph(nb_sentences=3),
+        'synopsis': fake.paragraph(nb_sentences=4),
         'average_rating': skew_rating(),
-        'number_of_ratings': skew_review_count()
+        'rating_count': skew_rating_count()
     }
-    
+
     book_id += 1
     return book_dictionary
