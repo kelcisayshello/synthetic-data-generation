@@ -4,15 +4,32 @@ This project offers a flexible solution for generating customizable fake data, e
 
 ### File Structure 📑
 
-* `generators/`: Core modules for generating structured media data.
-    * `Book.py`: Handles generation logic for book objects, including titles, authors, genres, and other relevant metadata.
-    * `FavoritedBook.py`: Handles data generation specific to user-favorited books, including relationships between users and book objects.
-    * `User.py`: Handles generation logic to create fake user profiles, such as usernames, passwords, email addresses, and other user-specific information.
-* `converters/`: Provides utilities to convert generated data into different formats.
-    * `to_json.py`: Converts data to JSON format.
-    * `to_csv.py`: Converts data to CSV format.
-* `sample_outputs/`: Stores examples of generated data in various formats.
-* `README.md`: This file! 👋
+```
+.
+├── converters/
+│   ├── to_json.py
+│   └── to_csv.py
+├── generators/
+│   ├── Book.py
+│   ├── FavoritedBook.py
+│   └── User.py
+├── sample_outputs/
+│   └── placeholder.txt
+├── virtualenv/
+├── .gitignore
+├── config.py
+├── dialogue.py
+├── README.md
+├── requirements.txt
+└── utils.py
+```
+
+### Up-To-Date Modules
+
+`generators/`: Core modules for generating structured data for the application.
+* `Book.py`: Defines data generation logic for book objects, including titles, authors, genres, and other relevant metadata.
+* `FavoritedBook.py`: Handles data generation specific to user-favorited books, including relationships between users and book objects.
+* `User.py`: Manages data generation for user profiles, such as usernames, passwords, email addresses, and other user-specific information.
 
 ### Getting Started 🚀
 

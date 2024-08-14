@@ -1,9 +1,9 @@
 import re
 import utils
 
-BOOKS_COUNT = 20
-FAVORITED_BOOKS_COUNT = 20
-USERS_COUNT = 15
+BOOKS_COUNT = 0
+FAVORITED_BOOKS_COUNT = 0
+USERS_COUNT = 0
 
 def reset_config():
     """
@@ -37,6 +37,6 @@ def reset_config():
                 print("Sorry, that was an invalid choice. Please enter either a [y] or [n].\n")
         except ValueError:
             utils.value_error()
-                
+                  
 if __name__ == "__main__":
     reset_config()
