@@ -14,21 +14,21 @@ This project offers a flexible solution for generating customizable fake data, e
 
 ### Getting Started 🚀
 
-1. Clone the repository
-2. Create and activate a virtual environment
+1. Clone the repository.
+2. Create and activate a virtual environment.
 ```zsh
 python3 -m venv virtualenv
 source virtualenv/bin/activate
 ```
-3. Install Python dependencies
+3. Install Python dependencies.
 ```zsh
 pip install -r requirements.txt
 ```
-4. From the root folder, run the `main.py` file using this command.
+4. From the root folder, run the `dialogue.py` file using this command and follow the terminal workflow.
 ```zsh
-python3 main.py
+python3 dialogue.py
 ```
-5. Happy data generation!
+5. Thats it! To exit the data generation program, enter `CTRL` + `C` at any time. Happy data generating!
 
 ### Sample Data Generation Workflow ✨
 ![](preview_dialogue.gif)

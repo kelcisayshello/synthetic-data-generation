@@ -63,7 +63,6 @@ def generate_book_data() -> dict:
         (dict): A dictionary representing a book with the following keys:
             - book_id (int): A unique identifier for each book record.
             - title (str): Title of the book.
-            - author (str): A randomly generated author name.
             - isbn13 (str): A randomly generated 13-digit ISBN number.
             - publication_year (int): A random year between 1970 and 2024, with skewed distribution towards years after 1988.
             - genre (str): A comma-separated string of randomly selected genres.
@@ -84,7 +83,6 @@ def generate_book_data() -> dict:
     book_dictionary = {
         'book_id': book_id,
         'title': fake.sentence(nb_words=4)[:-1], 
-        'author': fake.name(),
         'isbn13': fake.isbn13(),
         'publication_year': random.randint(1970, 2024),
         'genre': generate_random_genres(BOOK_GENRES),
