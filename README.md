@@ -4,8 +4,10 @@ This project offers a flexible solution for generating customizable fake data, e
 
 ### File Structure 📑
 
-* `generators/`: Contains the core data generation logic.
-    * `books.py`: Functions used to generate fake book data.
+* `generators/`: Core modules for generating structured media data.
+    * `Book.py`: Handles generation logic for book objects, including titles, authors, genres, and other relevant metadata.
+    * `FavoritedBook.py`: Handles data generation specific to user-favorited books, including relationships between users and book objects.
+    * `User.py`: Handles generation logic to create fake user profiles, such as usernames, passwords, email addresses, and other user-specific information.
 * `converters/`: Provides utilities to convert generated data into different formats.
     * `to_json.py`: Converts data to JSON format.
     * `to_csv.py`: Converts data to CSV format.
@@ -31,4 +33,5 @@ python3 dialogue.py
 5. That's it! To exit the data generation program, enter `CTRL` + `C` at any time. Happy data generating!
 
 ### Sample Data Generation Workflow ✨
-![](preview_dialogue.gif)
+<!-- ![](preview_dialogue.gif) -->
+( .gif preview coming soon )

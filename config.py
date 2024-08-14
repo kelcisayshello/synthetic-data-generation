@@ -1,16 +1,16 @@
 import re
-import dialogue
+import utils
 
-BOOKS_COUNT = 34
-FAVORITED_BOOKS_COUNT = 33
-USERS_COUNT = 0
+BOOKS_COUNT = 20
+FAVORITED_BOOKS_COUNT = 20
+USERS_COUNT = 15
 
 def reset_config():
     """
     Resets all variables found in this config file back to 0 after user confirmation.
     """
 
-    dialogue.clear_screen()
+    utils.clear_screen()
     
     while True:
         try:
@@ -36,7 +36,7 @@ def reset_config():
             else:
                 print("Sorry, that was an invalid choice. Please enter either a [y] or [n].\n")
         except ValueError:
-            dialogue.value_error()
+            utils.value_error()
                 
 if __name__ == "__main__":
     reset_config()

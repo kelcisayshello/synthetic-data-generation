@@ -6,13 +6,13 @@ import config
 CONTENT_TYPE_MAPPING = {
     1: "books",
     2: "users",
-    3: "favorited books",
+    3: "favorited books"
 }
 
 GENERATOR_FUNCTIONS = {
     1: generate_book_data,
     2: generate_user_data,
-    3: generate_favoritedbook_data,
+    3: generate_favoritedbook_data
 }
 
 def main():

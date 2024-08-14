@@ -5,7 +5,7 @@ fake = Faker()
 
 saved_book_id = 1 
 user_id = 1
-unavailable_book_ids = set()  # Keep track of used book IDs
+unavailable_book_ids = set()
 
 def skew_rating():
     """Generates a random decimal rating from 1 to 5, skewed towards 2 to 3.9."""
@@ -50,7 +50,7 @@ def generate_favoritedbook_data(book_count) -> dict:
         'book_id': book_id,
         'notes': fake.paragraph(),
         'user_rating': skew_rating(),
-        'read_status': random.choices(['Not Started', 'In Progress', 'Completed'], weights=[3, 2, 5])[0]
+        'read_status': random.choices(['Not Started', 'In Progress', 'Completed'], weights=[0, 3, 7])[0]
     }
 
     saved_book_id += 1

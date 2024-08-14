@@ -25,7 +25,18 @@ def get_content_type():
         try:
             choice = int(input(f"""What kind of synthetic content would you like to generate today?\n{menu_options}\nEnter the number corresponding to your choice: """))
             if choice in dialogue.CONTENT_TYPE_MAPPING:
-                return choice
+                if dialogue.CONTENT_TYPE_MAPPING[choice] == "favorited books":
+                    if config.USERS_COUNT >= 1 and config.BOOKS_COUNT >= 1:
+                        return choice
+                    else:
+                        if config.USERS_COUNT == 0:
+                            print(f"\n🚧 Looks like there isn't any USER data for that! Generate some USER data first.\n")
+                            dialogue.main()
+                        elif config.BOOKS_COUNT == 0: 
+                            print(f"\n🚧 Looks like there isn't any BOOK data for that! Generate some BOOK data first.\n")
+                            dialogue.main()
+                else:
+                    return choice
             else:
                 print("Sorry, that was an invalid choice. Please enter a valid number from the menu.")
         except ValueError:
@@ -51,6 +62,8 @@ def get_content_count(content_type: str):
                         return count
                     else:
                         print(f"\nSorry, you need to enter a number equal to or less than {config.BOOKS_COUNT}.\n")
+                else:
+                    return count
             else:
                 print("Sorry, that is an invalid choice. Please enter a positive number less than nine quintillion.\n")
         except ValueError:
