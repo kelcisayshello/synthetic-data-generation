@@ -1,5 +1,3 @@
-from .book import *
-from .saved_book import *
-
-from .shows import *
-from .movies import *
+from .Book import *
+from .FavoritedBook import *
+from .User import *

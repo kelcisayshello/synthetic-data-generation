@@ -17,14 +17,11 @@ def skew_rating():
     else:
         return round(random.uniform(1, 5), 1)
 
-def generate_savedbook_data(book_count: int) -> dict:
+def generate_favoritedbook_data(book_count) -> dict:
     """
     Generates a dictionary containing synthetic saved book information. 
     This function relies on global `saved_book_id` and `user_id` variables 
     to maintain unique IDs.
-    
-    Args:
-        book_count (int): Pass in the exact amount of books previously generated from book.py.
 
     Returns:
         (dict): A dictionary representing a saved book with the following keys:

@@ -28,7 +28,7 @@ pip install -r requirements.txt
 ```zsh
 python3 dialogue.py
 ```
-5. Thats it! To exit the data generation program, enter `CTRL` + `C` at any time. Happy data generating!
+5. That's it! To exit the data generation program, enter `CTRL` + `C` at any time. Happy data generating!
 
 ### Sample Data Generation Workflow ✨
 ![](preview_dialogue.gif)
