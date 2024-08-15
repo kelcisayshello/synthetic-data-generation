@@ -1,3 +1,4 @@
 from .Book import *
-from .FavoritedBook import *
+from .FavoriteBook import *
 from .User import *
+from .Author import *

@@ -25,17 +25,17 @@ def get_content_type():
         try:
             choice = int(input(f"""What kind of synthetic content would you like to generate?\n\n{menu_options}\n\nEnter a number corresponding to your choice: """))
             if choice in dialogue.CONTENT_TYPE_MAPPING:
-                if dialogue.CONTENT_TYPE_MAPPING[choice] == "favorited books":
+                if dialogue.CONTENT_TYPE_MAPPING[choice] == "favorite books":
                     if config.USERS_COUNT >= 1 and config.BOOKS_COUNT >= 1:
                         return choice
                     else:
                         if config.USERS_COUNT == 0:
                             clear_screen()
-                            print(f"👥 Looks like there isn't any USER data for that! Generate some USER data first.\n")
+                            print(f"👥 Looks like there isn't any USER data to do that yet! Generate some USER data first.\n")
                             dialogue.main()
                         elif config.BOOKS_COUNT == 0: 
                             clear_screen()
-                            print(f"📚 Looks like there isn't any BOOK data for that! Generate some BOOK data first.\n")
+                            print(f"📚 Looks like there isn't any BOOK data to do that yet! Generate some BOOK data first.\n")
                             dialogue.main()
                 else:
                     return choice
@@ -59,11 +59,19 @@ def get_content_count(content_type: str):
         try:
             count = int(input(f"How many {content_type} would you like to generate?\nEnter a positive number: "))
             if 0 <= count < sys.maxsize:
-                if content_type == "favorited books":
+                if content_type == "favorite books":
                     if count <= config.BOOKS_COUNT:
                         return count
                     else:
-                        print(f"\nSorry, you need to enter a number equal to or less than {config.BOOKS_COUNT}.\n")
+                        clear_screen()
+                        print(f"⛔️ Sorry, you need to enter a number equal to or less than {config.BOOKS_COUNT}.")
+                        
+                        if config.BOOKS_COUNT == 0:
+                            print("📚 Looks like you will need to generate some BOOK data first.\n")
+                            dialogue.main()   
+                        elif config.USERS_COUNT == 0:
+                            print("👥 Looks like you will need to generate some USER data first.\n")
+                            dialogue.main()
                 else:
                     return count
             else:

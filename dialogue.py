@@ -6,13 +6,15 @@ import config
 CONTENT_TYPE_MAPPING = {
     1: "books",
     2: "users",
-    3: "favorited books"
+    3: "favorite books",
+    4: "authors",
 }
 
 GENERATOR_FUNCTIONS = {
     1: generate_book_data,
     2: generate_user_data,
-    3: generate_favoritedbook_data
+    3: generate_favoritebook_data,
+    4: generate_author_data
 }
 
 def main():
@@ -30,7 +32,7 @@ def main():
             
         for _ in range(content_count):
             
-            if generator_function == generate_favoritedbook_data:
+            if generator_function == generate_favoritebook_data:
                 content_record = generator_function(config.BOOKS_COUNT)
             else:
                 content_record = generator_function()

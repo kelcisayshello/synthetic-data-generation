@@ -11,8 +11,9 @@ This project offers a flexible solution for generating customizable fake data, e
 │   └── to_csv.py
 ├── generators/
 │   ├── Book.py
-│   ├── FavoritedBook.py
+│   ├── FavoriteBook.py
 │   └── User.py
+│   └── Author.py
 ├── sample_outputs/
 │   └── placeholder.txt
 ├── virtualenv/
@@ -27,9 +28,10 @@ This project offers a flexible solution for generating customizable fake data, e
 ### Up-To-Date Modules
 
 `generators/`: Core modules for generating structured data for the application.
-* `Book.py`: Defines data generation logic for book objects, including titles, authors, genres, and other relevant metadata.
+* `Book.py`: Contains data generation logic for book objects, including titles, authors, genres, and other relevant metadata.
 * `FavoritedBook.py`: Handles data generation specific to user-favorited books, including relationships between users and book objects.
-* `User.py`: Manages data generation for user profiles, such as usernames, passwords, email addresses, and other user-specific information.
+* `User.py`: Contains data generation for user profiles, such as usernames, passwords, email addresses, and other user-specific information.
+* `Author.py`: Contains data generation for book author profiles, including name, biography, birth date and death date (if exists).
 
 ### Getting Started 🚀
 

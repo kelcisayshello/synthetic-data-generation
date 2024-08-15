@@ -1,9 +1,16 @@
 import re
 import functions
 
-BOOKS_COUNT = 1
-FAVORITED_BOOKS_COUNT = 1
+# ---------------------------------------------------------------------------- #
+#                 ENVIRONMENT CONFIGURATION VARIABLES (PUBLIC)                 #
+# ---------------------------------------------------------------------------- #
+
+BOOKS_COUNT = 30
+FAVORITE_BOOKS_COUNT = 2
 USERS_COUNT = 0
+AUTHORS_COUNT = 20
+
+# ------------------------------------- - ------------------------------------ #
 
 def reset_config():
     """Resets all variables found in this config file back to 0 after user confirmation."""
