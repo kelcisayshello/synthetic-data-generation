@@ -1,23 +1,21 @@
 import re
-import utils
+import functions
 
-BOOKS_COUNT = 0
-FAVORITED_BOOKS_COUNT = 0
+BOOKS_COUNT = 1
+FAVORITED_BOOKS_COUNT = 1
 USERS_COUNT = 0
 
 def reset_config():
-    """
-    Resets all variables found in this config file back to 0 after user confirmation.
-    """
+    """Resets all variables found in this config file back to 0 after user confirmation."""
 
-    utils.clear_screen()
+    functions.clear_screen()
     
     while True:
         try:
-            confirmation = input("Hey! You're about to reset your environment. This reverts memory of all variables stored in config.py back to zero. Are you sure?\n[Y] Yes, reset my environment.\n[N] No, cancel the reset.\nEnter your choice: ")
+            confirmation = input("Hey! You're about to reset your environment. This reverts memory of all variables stored in config.py back to zero.\nAre you sure?\n\n[Y] Yes, reset my environment.\n[N] No, cancel the reset.\n\nEnter your choice: ")
             if confirmation.lower() == 'y' or confirmation.lower() == 'n':
                 if confirmation.lower() == 'n':
-                    print("Reset has been cancelled.")
+                    print("❌ Reset has been cancelled.")
                     return
                 else:
                     with open("config.py", "r") as config_file:
@@ -36,7 +34,7 @@ def reset_config():
             else:
                 print("Sorry, that was an invalid choice. Please enter either a [y] or [n].\n")
         except ValueError:
-            utils.value_error()
+            functions.value_error()
                   
 if __name__ == "__main__":
     reset_config()

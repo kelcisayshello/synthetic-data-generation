@@ -23,17 +23,19 @@ def get_content_type():
         menu_options = "\n".join([f"[{key}] {value.title()}" for key, value in dialogue.CONTENT_TYPE_MAPPING.items()])
         
         try:
-            choice = int(input(f"""What kind of synthetic content would you like to generate today?\n{menu_options}\nEnter the number corresponding to your choice: """))
+            choice = int(input(f"""What kind of synthetic content would you like to generate?\n\n{menu_options}\n\nEnter a number corresponding to your choice: """))
             if choice in dialogue.CONTENT_TYPE_MAPPING:
                 if dialogue.CONTENT_TYPE_MAPPING[choice] == "favorited books":
                     if config.USERS_COUNT >= 1 and config.BOOKS_COUNT >= 1:
                         return choice
                     else:
                         if config.USERS_COUNT == 0:
-                            print(f"\n🚧 Looks like there isn't any USER data for that! Generate some USER data first.\n")
+                            clear_screen()
+                            print(f"👥 Looks like there isn't any USER data for that! Generate some USER data first.\n")
                             dialogue.main()
                         elif config.BOOKS_COUNT == 0: 
-                            print(f"\n🚧 Looks like there isn't any BOOK data for that! Generate some BOOK data first.\n")
+                            clear_screen()
+                            print(f"📚 Looks like there isn't any BOOK data for that! Generate some BOOK data first.\n")
                             dialogue.main()
                 else:
                     return choice
@@ -55,7 +57,7 @@ def get_content_count(content_type: str):
     clear_screen()
     while True:
         try:
-            count = int(input(f"How many {content_type} do you want to generate?\nEnter a positive number: "))
+            count = int(input(f"How many {content_type} would you like to generate?\nEnter a positive number: "))
             if 0 <= count < sys.maxsize:
                 if content_type == "favorited books":
                     if count <= config.BOOKS_COUNT:
@@ -75,7 +77,7 @@ def get_export_choice():
     clear_screen()
     while True:
         try:
-            choice = int(input(f"And how would you like to export your synthetic data?\n[1] Export to CSV\n[2] Export to JSON\nEnter your choice: "))
+            choice = int(input(f"Please select the desired format for exporting your synthetic data:\n\n[1] Export to CSV (Comma-Separated Values)\n[2] Export to JSON (JavaScript Object Notation)\n\nEnter your choice: "))
             if 1 <= choice <= 2:
                 return choice
             else:
@@ -109,28 +111,29 @@ def generate_more():
 
     while True:
         try:
-            generate_more = int(input("Do you want to generate more data?\n[1] Yes \n[2] No\nEnter your choice: "))
+            generate_more = int(input("Would you like to generate additional data?\n\n[1] Yes \n[2] No\n\nEnter your choice: "))
             if 1 <= generate_more <= 2:
                 if generate_more == 2:
                     print("Okay, glad I could help ✨! ")
                     sys.exit()
                 else:
+                    clear_screen()
                     dialogue.main()
             else:
                 print("Sorry, that is an invalid choice. Please select either [1] or [2].\n")
         except ValueError:
             value_error()
             
-def update_config_variable_count(content_type, new_value):
+def update_config_variable_count(content_type: str, new_value: int):
     """
     Updates the corresponding variable in config.py based on the content_type.
 
     Args:
         content_type (str): The type of content being generated (e.g., "books", "shows", "movies").
-        new_value: The new value to assign to the corresponding variable in config.py.
+        new_value (int): The new value to assign to the corresponding variable in config.py.
     """
 
-    variable_name = content_type.upper().replace(" ", "_") + "_COUNT"  # Convert content_type to variable name
+    variable_name = content_type.upper().replace(" ", "_") + "_COUNT"
 
     if not hasattr(config, variable_name):
         print(f"Error: Variable {variable_name} not found in config.py")

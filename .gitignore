@@ -3,3 +3,4 @@ __pycache__/
 /sample_outputs/*.csv
 /sample_outputs/*.json
 .DS_Store
+.config.py
