@@ -12,10 +12,10 @@ This project offers a flexible solution for generating customizable fake data, e
 ├── generators/
 │   ├── Book.py
 │   ├── FavoriteBook.py
-│   └── User.py
+│   ├── User.py
 │   └── Author.py
 ├── sample_outputs/
-│   └── placeholder.txt
+│   └── ghost_file.txt
 ├── virtualenv/
 ├── .gitignore
 ├── config.py
