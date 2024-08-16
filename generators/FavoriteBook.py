@@ -4,8 +4,9 @@ import random
 fake = Faker()
 
 saved_book_id = 1 
-user_id = 1
 unavailable_book_ids = set()
+user_id = 100000
+unavailable_user_ids = set()
 
 def skew_rating():
     """Generates a random decimal rating from 1 to 5, skewed towards 2 to 3.9."""
@@ -42,6 +43,12 @@ def generate_favoritebook_data(book_count) -> dict:
         book_id = random.randint(1, book_count)
         if book_id not in unavailable_book_ids:
             unavailable_book_ids.add(book_id)
+            break   
+        
+    while True:
+        user_id = random.randint(100000, 999999)
+        if user_id not in unavailable_user_ids:
+            unavailable_user_ids.add(user_id)
             break   
 
     saved_book_dictionary = {

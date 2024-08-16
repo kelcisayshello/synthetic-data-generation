@@ -6,8 +6,8 @@ import functions
 # ---------------------------------------------------------------------------- #
 
 BOOKS_COUNT = 30
-FAVORITE_BOOKS_COUNT = 2
-USERS_COUNT = 0
+FAVORITE_BOOKS_COUNT = 4
+USERS_COUNT = 4
 AUTHORS_COUNT = 20
 
 # ------------------------------------- - ------------------------------------ #

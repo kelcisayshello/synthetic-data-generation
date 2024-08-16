@@ -1,8 +1,10 @@
 from faker import Faker
+import random
 
 fake = Faker()
 
-user_id = 1 
+user_id = 100000
+unavailable_user_ids = set()
 
 def generate_user_data() -> dict:
     """
@@ -21,6 +23,13 @@ def generate_user_data() -> dict:
     """
 
     global user_id
+    global unavailable_user_ids
+    
+    while True:
+        user_id = random.randint(100000, 999999)
+        if user_id not in unavailable_user_ids:
+            unavailable_user_ids.add(user_id)
+            break   
 
     user_dictionary = {
         'user_id': user_id,
@@ -33,5 +42,5 @@ def generate_user_data() -> dict:
         'date_of_birth': fake.date_of_birth(minimum_age=13, maximum_age=130).strftime('%Y-%m-%d')
     }
 
-    user_id += 1
+    # user_id += 1
     return user_dictionary

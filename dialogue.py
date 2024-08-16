@@ -8,13 +8,15 @@ CONTENT_TYPE_MAPPING = {
     2: "users",
     3: "favorite books",
     4: "authors",
+    5: "book authors"
 }
 
 GENERATOR_FUNCTIONS = {
     1: generate_book_data,
     2: generate_user_data,
     3: generate_favoritebook_data,
-    4: generate_author_data
+    4: generate_author_data,
+    5: generate_book_author_data
 }
 
 def main():
@@ -31,12 +33,17 @@ def main():
         generator_function = GENERATOR_FUNCTIONS[user_content_choice]
             
         for _ in range(content_count):
-            
-            if generator_function == generate_favoritebook_data:
+            if content_type == "favorite books":
                 content_record = generator_function(config.BOOKS_COUNT)
+                database.append(content_record)
+            elif content_type == "book authors":
+                author_dict = generate_author_data()
+                book_dict = generate_book_data()
+                book_author_record = generate_book_author_data(author_dict, book_dict)
+                database.append(book_author_record)
             else:
                 content_record = generator_function()
-            database.append(content_record)
+                database.append(content_record)  
             
         functions.clear_screen()
         
