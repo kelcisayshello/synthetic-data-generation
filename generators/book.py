@@ -55,6 +55,7 @@ def skew_rating():
         return round(random.uniform(1, 5), 1)
     
 book_id = 1
+
 def generate_book_data() -> dict:
     """
     Generates a dictionary containing synthetic book information. This function relies on a global `book_id` variable to maintain unique book IDs.

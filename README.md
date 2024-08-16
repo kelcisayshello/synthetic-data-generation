@@ -1,6 +1,6 @@
 # Synthetic Data Generation 🤖
 
-This project offers a flexible solution for generating customizable fake data, empowering other developers to enhance web applications, software, and machine learning projects with no-bloat tools for development.
+This project offers a flexible solution for generating customizable fake data, empowering other developers to enhance web applications, software, and machine learning projects with a no-bloat tool for data-driven development.
 
 ### File Structure 📑
 
@@ -16,7 +16,6 @@ This project offers a flexible solution for generating customizable fake data, e
 │   └── Author.py
 ├── sample_outputs/
 │   └── ghost_file.txt
-├── virtualenv/
 ├── .gitignore
 ├── config.py
 ├── dialogue.py
@@ -29,7 +28,7 @@ This project offers a flexible solution for generating customizable fake data, e
 
 `generators/`: Core modules for generating structured data for the application.
 * `Book.py`: Contains data generation logic for book objects, including titles, authors, genres, and other relevant metadata.
-* `FavoritedBook.py`: Handles data generation specific to user-favorited books, including relationships between users and book objects.
+* `FavoriteBook.py`: Handles data generation specific to user-favorited books, including relationships between users and book objects.
 * `User.py`: Contains data generation for user profiles, such as usernames, passwords, email addresses, and other user-specific information.
 * `Author.py`: Contains data generation for book author profiles, including name, biography, birth date and death date (if exists).
 
